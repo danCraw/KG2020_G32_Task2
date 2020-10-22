@@ -1,5 +1,8 @@
-package com.company;
+package KG.Task2;
 
+import LineDrawers.BresenhamLineDrawer;
+import LineDrawers.DDALineDrawer;
+import LineDrawers.WoLineDrawer;
 import utils.DrawUtils;
 
 import javax.swing.*;
@@ -7,7 +10,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
 
-public class DrawPanel extends JPanel implements MouseMotionListener, KeyListener, MouseListener {
+public class DrawPanel extends JPanel implements MouseMotionListener, MouseListener {
 
     private int drawAlgorithm = 0;
     private Point position = new Point(0, 0);
@@ -15,7 +18,6 @@ public class DrawPanel extends JPanel implements MouseMotionListener, KeyListene
     DrawPanel() {
         this.addMouseMotionListener(this);
         this.addMouseListener(this);
-        this.addKeyListener(this);
     }
 
 
@@ -41,6 +43,7 @@ public class DrawPanel extends JPanel implements MouseMotionListener, KeyListene
         if (drawAlgorithm > 2) {
             drawAlgorithm = 0;
         }
+
         drawAll(ld, pd);
         g.drawImage(bi, 0, 0, null);
         bi_g.dispose();
@@ -53,47 +56,10 @@ public class DrawPanel extends JPanel implements MouseMotionListener, KeyListene
     }
 
     @Override
-    public void keyTyped(KeyEvent keyEvent) {
-
-    }
-
-    @Override
-    public void keyPressed(KeyEvent keyEvent) {
-            System.err.println(keyEvent.getKeyCode());
-        if (keyEvent.getKeyCode()==KeyEvent.VK_LEFT) {
-            System.err.println(KeyEvent.VK_LEFT);
-            drawAlgorithm--;
-            repaint();
-        }
-        if (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT) {
-            drawAlgorithm++;
-            repaint();
-        }
-    }
-
-    @Override
-    public void keyReleased(KeyEvent keyEvent) {
-
-    }
-
-
-    @Override
-    public void mouseDragged(MouseEvent mouseEvent) {
-
-    }
-
-
-    @Override
-    public void mouseMoved(MouseEvent e) {
-        position = new Point(e.getX(), e.getY());
-        repaint();
-    }
-
-    @Override
     public void mouseClicked(MouseEvent mouseEvent) {
+
     }
 
-    @Override
     public void mousePressed(MouseEvent mouseEvent) {
         drawAlgorithm++;
         repaint();
@@ -111,6 +77,16 @@ public class DrawPanel extends JPanel implements MouseMotionListener, KeyListene
 
     @Override
     public void mouseExited(MouseEvent mouseEvent) {
+
+    }
+
+    @Override
+    public void mouseDragged(MouseEvent mouseEvent) {
+
+    }
+
+    @Override
+    public void mouseMoved(MouseEvent mouseEvent) {
 
     }
 }

@@ -1,4 +1,4 @@
-package com.company;
+package KG.Task2;
 
 import java.awt.*;
 

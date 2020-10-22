@@ -1,4 +1,4 @@
-package com.company;
+package KG.Task2;
 
 import javax.swing.*;
 import java.awt.*;

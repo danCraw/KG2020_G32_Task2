@@ -1,6 +1,6 @@
 package LineDrawers;
 
-import com.company.LineDrawer;
+import KG.Task2.LineDrawer;
 
 import java.awt.*;
 

@@ -1,7 +1,7 @@
 package utils;
 
-import com.company.LineDrawer;
-import com.company.PixelDrawer;
+import KG.Task2.LineDrawer;
+import KG.Task2.PixelDrawer;
 
 import java.awt.*;
 
