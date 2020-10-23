@@ -16,10 +16,9 @@ public class BresenhamLineDrawer implements LineDrawer {
     @Override
     public void drawLine(int x1, int y1, int x2, int y2) {
         int x, y, dx, dy;
-        boolean swap = false;
-
+        boolean endOfQuarter = false;
         if (Math.abs(y2 - y1) < Math.abs(x2 - x1)) {
-            if (0 < x2 - x1) {
+            if (x2 - x1 > 0) {
                 x = x1;
                 y = y1;
                 dx = x2 - x1;
@@ -31,8 +30,8 @@ public class BresenhamLineDrawer implements LineDrawer {
                 dy = y1 - y2;
             }
         } else {
-            swap = true;
-            if (0 < y2 - y1) {
+            endOfQuarter = true;
+            if (y2 - y1 > 0) {
                 x = y1;
                 y = x1;
                 dx = y2 - y1;
@@ -46,7 +45,7 @@ public class BresenhamLineDrawer implements LineDrawer {
         }
         int err = 0;
         for (int i = 0; i <= dx; i++) {
-            if (swap)
+            if (endOfQuarter)
                 pd.drawPixel(y, x, Color.RED);
             else
                 pd.drawPixel(x, y, Color.BLUE);

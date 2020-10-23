@@ -23,9 +23,7 @@ public class DDALineDrawer implements LineDrawer {
                 int tmp = x1;
                 x1 = x2;
                 x2 = tmp;
-                tmp = y1;
                 y1 = y2;
-                y2 = tmp;
             }
             for (int j = x1; j <= x2; j++) {
                 double i = k * (j - x1) + y1;
@@ -36,7 +34,6 @@ public class DDALineDrawer implements LineDrawer {
             if (y1 > y2) {
                 int tmp = x1;
                 x1 = x2;
-                x2 = tmp;
                 tmp = y1;
                 y1 = y2;
                 y2 = tmp;
